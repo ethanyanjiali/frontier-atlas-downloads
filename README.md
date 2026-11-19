@@ -1,32 +1,36 @@
 # Atlas desktop downloads
 
-Atlas is a personal knowledge workspace with graph and hex-tile visualizations, an offline-first artifact library, research discussions, and revision-based Understanding documents.
+Atlas is a personal knowledge workspace with graph and hex-tile visualizations, saved sources, research discussions, and revision-based Understanding documents.
 
-**[Download Atlas 0.2.0 for Apple Silicon Macs](https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.2.0)**
+**[Download Atlas 0.3.0 for Apple Silicon Macs](https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.3.0)**
 
-This public repository contains downloads and release notes. The application's development repository is private. No personal library, API keys, or account sessions are included.
+This repository contains downloads and release notes only. Development source remains private. No personal library, API keys or account sessions are included.
 
-## Install the preview
+## Install or update
 
-- Requires an Apple Silicon Mac (M1 or newer), macOS 13 or newer.
-- Download `Atlas-0.2.0-mac-arm64.zip` from the release's **Assets**, unzip it, and move Atlas.app into Applications.
-- Quit any older Atlas instance before opening the new app. The browser development server also uses port 4173; stop it before starting the desktop backend.
-- This preview is **not Developer ID signed or notarized**. macOS may block its first launch. After checking the source of your download, use macOS System Settings → Privacy & Security → Open Anyway if offered. Managed computers may prevent this; a signed build is not available yet. Do not disable Gatekeeper globally.
-- First launch is a single setup page. Open your existing Atlas Data directory containing `atlas.json`, or create a new library. Choose a model provider and enter your own credentials.
-- Later, use the floating Settings gear in the visualizer or Cmd+, to change the library/provider. Settings have Library and LLM provider tabs.
+- Apple Silicon Mac (M1 or newer), macOS 13 or newer.
+- Download `Atlas-0.3.0-mac-arm64.zip` from release Assets and unzip it. Install Atlas.app in Applications, or replace your existing Atlas.app at its current location after quitting it.
+- Existing data stays in your chosen library folder. Settings, credentials and provider plugins stay in the installation profile. Do not delete your library or uninstall the profile when replacing the app.
+- This build is **not Developer ID signed or notarized**. macOS may block first launch. After verifying your download, use System Settings → Privacy & Security → Open Anyway if offered. Managed computers may prevent launch. Do not disable Gatekeeper globally.
+- First launch: open the Data folder containing `atlas.json`, or create a library. Choose a model provider and enter your own credentials. On another computer, configure credentials again and import a library archive from Settings → Library if needed.
+- Later: use the Settings gear or Cmd+, for Library, LLM provider and App settings. File → New window opens another window; each can select a different graph.
 
-## Models and private providers
+Atlas 0.3.0 checks public releases once on launch outside developer mode. Settings → App offers checks, release notes, progress/cancellation and verified downloads. The unsigned build requires manual app replacement; a restart alone does not install an update. Older versions need a manual download of 0.3.0 first. Desktop backends use dynamic ports, so a browser development server need not be stopped unless it is writing the same graph.
 
-Built-in options: Codex/ChatGPT sign-in, OpenAI API, OpenRouter, Muse (Meta Model API), Claude (Anthropic API), and Gemini (Google API). API subscriptions/billing and model availability belong to the selected provider; there is no automatic billing-provider fallback. Codex requires a separately installed, signed-in Codex CLI.
+## Providers and integration
 
-Choose a **Main model** for discussions and Understanding, and a **Background model** for titles, summaries and small tasks. Dropdowns load provider catalogs when possible, with suggested defaults and custom model IDs as a fallback. Listing a model does not guarantee support for every Atlas feature. API credentials remain OS-encrypted on this computer, outside the portable library.
+Built-in choices: Codex/ChatGPT sign-in, OpenAI, OpenRouter, Muse (Meta Model API), Claude and Gemini. Billing and model availability belong to the chosen provider; there is no automatic billing-provider fallback. Codex needs a separately installed, signed-in Codex CLI. Main/background model selectors use available catalogs with custom IDs as a fallback. Credentials remain OS-encrypted on this computer.
 
-Settings can export a readable provider developer kit with an agent guide, typed feature contracts, an executable adapter scaffold, and offline verification. Install only trusted plugins: they execute local code and receive their provider's prompts and credentials.
+Settings → App exports an integration developer kit: provider contracts/scaffold/tests plus an independent Inbox URL producer for iCloud, Google Drive or local managed folders. Install only trusted model plugins: they execute local code and receive their configured prompts/credentials.
 
-## Storage and limitations
+## Phone and Chrome sharing
 
-Choose a local folder, or a folder managed by iCloud Drive/Google Drive. Use one writing device at a time and wait for synchronization before switching computers. Keep a backup of your library. Credentials are configured separately on each computer.
+Settings → Library contains the one-time iPhone Shortcut guide. It writes a URL into a fixed per-graph Inbox folder without asking for a path on every share. Desktop Atlas must be running to collect. Review pending captures in Workspace → Inbox, then Keep or Discard. Reading does not publish the artifact.
 
-This is an early desktop preview. The browser capture extension's desktop authentication/wake integration is not implemented yet. Mobile, Windows/Intel binaries, automatic updates, signing/notarization, and simultaneous multi-device conflict resolution are not included.
+The optional Chrome capture 0.3.0 ZIP is on the release page. Open Atlas once, remove the older Save to Atlas extension, and Load unpacked from the extracted folder. It saves into the desktop app and wakes it when closed. No localhost browser tab is required. Windows native-host integration and Chrome Web Store updates are not included.
 
-The application is distributed as packaged software, not as an open-source project. Runtime JavaScript is minified, but a locally installed Electron application can still be inspected. Third-party components retain their respective licenses.
+## Storage and limits
+
+Use a local library or a folder managed by iCloud Drive/Google Drive. Use one writing computer at a time, wait for synchronization before switching, and keep backups. Export/import transfers selected graphs and their content; it does not transfer credentials or plugins. Inbox v1 accepts URL envelopes, not arbitrary local files. Raw audio transcription and a mobile Atlas app remain outside this release.
+
+Windows/Intel builds, signed automatic installation and simultaneous multi-device conflict resolution are not included. Runtime JavaScript is minified but Electron applications can be inspected. This packaged distribution is not an open-source license grant; third-party components retain their licenses.

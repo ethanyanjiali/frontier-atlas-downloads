@@ -2,14 +2,14 @@
 
 Atlas is a personal knowledge workspace with graph and hex-tile visualizations, saved sources, research discussions, and revision-based Understanding documents.
 
-**[Download Atlas 0.5.2 for Apple Silicon Macs](https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.2)**
+**[Download Atlas 0.5.3 for Apple Silicon Macs](https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.3)**
 
 This repository contains downloads and release notes only. Development source remains private. No personal library, API keys or account sessions are included.
 
 ## Install or update
 
 - Apple Silicon Mac (M1 or newer), macOS 13 or newer.
-- Download `Atlas-0.5.2-mac-arm64.zip` from release Assets and unzip it. Install Atlas.app in Applications, or replace your existing Atlas.app at its current location after quitting it.
+- Download `Atlas-0.5.3-mac-arm64.zip` from release Assets and unzip it. Install Atlas.app in Applications, or replace your existing Atlas.app at its current location after quitting it.
 - Existing data stays in your chosen library folder. Settings, credentials and provider plugins stay in the installation profile. Do not delete your library or uninstall the profile when replacing the app.
 - This build is **not Developer ID signed or notarized**. macOS may block first launch. After verifying your download, use System Settings → Privacy & Security → Open Anyway if offered. Managed computers may prevent launch. Do not disable Gatekeeper globally.
 - First launch: open the Data folder containing `atlas.json`, or create a library. Choose a model provider and enter your own credentials. On another computer, configure credentials again and import a library archive from Settings → Library if needed.

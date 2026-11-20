@@ -1,0 +1,219 @@
+[
+  {
+    "tag_name": "v0.5.2",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.2",
+    "body": "# Atlas 0.5.2 \u2014 Source refresh and document attribution\n\nmacOS Apple Silicon \u00b7 Unsigned and not notarized\n\n- Refetch URL-backed artifacts from their detail toolbar using the configured source importer, including Google Drive plugins.\n- Refresh source content, metadata, summary and estimated event date while preserving artifact identity, topic links, flags, manual dates and previous captures. Failed fetches retain the saved copy.\n- Preserve named authors, owners, contributors and last editors, available emails, and attributed comment replies. Owners are not automatically treated as authors; Google comment emails may be unavailable.\n- Show labeled source Created/Modified dates when no event date is known, without substituting the Atlas capture date.\n- Expand the integration developer kit with metadata/comment retrieval requirements. Installed custom plugins must return these fields; existing captures require refetching to obtain missing metadata.\n\nReleased together with Chrome Capture 0.5.1: visible elapsed-time saving status and a best-effort leave-page warning during native source imports. Chrome may allow tab closure; backend retrieval can continue independently.\n\n## Install\nQuit Atlas after active work finishes and replace Atlas.app at its existing location. Data, settings, credentials and installed plugins remain separate and unchanged. Verify Atlas-0.5.2-mac-arm64.zip against SHA256SUMS. Unsigned/not notarized; macOS or managed-device policy may require additional steps. Apple Silicon only.\n\nLoad unpacked from the new atlas-chrome-capture-0.5.1 folder for the extension update; reloading the older version folder does not install new files.\n\n## Verification\nOffline application, capture, plugin contract and source-refetch tests; packaged runtime smoke test; public archive privacy audit and exact-byte GitHub/iCloud checksum verification. No live private Google document or custom destination CLI validation. Local iCloud verification does not prove synchronization completion.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.5.2-mac-arm64.zip",
+        "size": 183596346,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.2/Atlas-0.5.2-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.1.zip",
+        "size": 54844,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.2/atlas-chrome-capture-0.5.1.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.1.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.2/atlas-chrome-capture-0.5.1.zip.sha256"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.2/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.2/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.5.1",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.1",
+    "body": "# Atlas 0.5.1 \u2014 Clearer plugin installation\n\nmacOS Apple Silicon \u00b7 Unsigned and not notarized\n\n- Settings \u2192 App now clearly labels the shared **Plugins** section and **Install plugin\u2026** button for both LLM providers and Google Drive plugins.\n- Installation help names plugin.json and provider.json and explains Save to apply.\n- Installed plugins show type, version, configuration and uninstall controls. An empty list now explains how to install a plugin.\n- Developer-kit help explicitly covers separate LLM provider, Google Drive and Inbox integrations.\n\nThis corrects misleading UI labels in 0.5.0; the plugin protocol and library schema are unchanged. Google Drive kit examples still require adaptation to the destination CLI/API. Chrome Capture remains at 0.5.0 and needs no update for this fix.\n\n## Install\nQuit Atlas after active work finishes and replace Atlas.app at its existing location. Library data, settings, credentials and installed plugins remain in place. Download Atlas-0.5.1-mac-arm64.zip and verify SHA256SUMS. This Apple Silicon build is not Developer ID signed or notarized; macOS or managed-device policy may require additional installation steps. Windows/Intel builds are not included.\n\n## Verification\nOffline application/architecture tests, an isolated Settings UI regression check, packaged runtime smoke test and public archive privacy audit. The Settings test checks the general installer label, Google Drive help/configuration, separate model selection and empty-state behavior. Exact release bytes and updater metadata are mirrored locally in iCloud; local verification does not prove cloud synchronization completion.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.5.1-mac-arm64.zip",
+        "size": 183593961,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.1/Atlas-0.5.1-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.1/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.1/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.5.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.0",
+    "body": "# Atlas 0.5.0 \u2014 Source integrations and better capture\n\nmacOS Apple Silicon \u00b7 Unsigned and not notarized\n\n## Changes\n- Independently installable Google Drive plugins alongside LLM provider plugins. The shared integration developer kit includes a destination-adaptable CLI/API example for Docs, Sheets and Slides: document body, metadata and comments. The example must be adapted to the destination CLI; it is not a preconfigured Google account integration.\n- Generic plugin sidecars: authenticated health probe, reuse of healthy external bridges, inherited app environment, optional private token-file import into encrypted credentials, redacted diagnostics, and shutdown of Atlas-owned children only. Manual bridge operation remains supported.\n- Discussion adapters may use all available authenticated tools implemented by their transport, including web search where supported. Automatic title/summary generation remains restricted; plugin declarations do not provision tools by themselves.\n- Journal saves complete before title generation. The first nonempty save generates a title; later regeneration occurs only when the Markdown reaches twice the previous title baseline length. Smaller edits retain the current title. Stale title jobs cannot overwrite newer content.\n- Chrome Capture 0.5.0 adds Gmail conversation PDF capture, scrolling screenshots, Google export fallback, source-plugin routing for Google documents, and an update/reload menu.\n- Document creation/modification timestamps remain source metadata, separate from artifact event dates. Comments are saved as a labeled section, with explicit capture coverage.\n\n## Capture limits\nGmail captures loaded message bodies and displayed headers/dates without changing the mailbox. Expand collapsed messages before saving; unloaded history and attachment file bytes are not guaranteed. Browser Google PDF export may still fail because of session/network restrictions; fallback is a labeled screenshot, not a complete-document PDF. Scrolling capture is bounded to 24 viewports or 16000 CSS pixels and may omit virtualized content, hidden sheets/slides and horizontal columns. CLI/API access requires existing working local authentication. Unpacked Chrome extensions cannot replace their own files automatically: download the new folder, then reload/load it in Chrome.\n\n## Install and compatibility\nDownload Atlas-0.5.0-mac-arm64.zip, quit the existing app after active work finishes, and replace Atlas.app at its existing location. The external library, credentials, settings and installed plugins remain in place. Open Atlas once to register its Chrome native connection.\n\nDownload atlas-chrome-capture-0.5.0.zip, extract it, and use chrome://extensions \u2192 Load unpacked with the new folder. Extension identity and native protocol v2 are unchanged. Google Drive integration support requires Atlas 0.5.0; custom capture requires a desktop advertising customCapture.\n\nLibrary schema stays at 1. Legacy provider API v1 plugins remain supported. Use one writing computer per synced library at a time. Windows/Intel Mac builds are not included. The app is not Developer ID signed or notarized; macOS or managed-device policies may require additional installation steps. The updater discovers compatible stable releases and verifies downloads; installation remains manual for this unsigned distribution.\n\n## Validation\nOffline application/architecture, extension and developer-kit tests; isolated real Python bridge lifecycle, Chromium scrolling and Gmail DOM/PDF fixtures; packaged backend/native-capture checks; and public archive privacy audit. These checks do not establish live Gmail DOM compatibility, successful Google PDF export on every account, private CLI authentication, or iCloud upload completion.\n\nSHA256SUMS and atlas-update.json identify the exact app ZIP. Identical release bytes are mirrored locally into iCloud Drive. No personal library or credentials are included. Source remains private; Electron runtime code is inspectable inside its binary.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.5.0-mac-arm64.zip",
+        "size": 183593773,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.0/Atlas-0.5.0-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.0.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.0/atlas-chrome-capture-0.5.0.sha256"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.0.zip",
+        "size": 53407,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.0/atlas-chrome-capture-0.5.0.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.0/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.5.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.4.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.4.0",
+    "body": "# Atlas 0.4.0 \u2014 Journals and flexible browser capture\n\nmacOS Apple Silicon \u00b7 Unsigned and not notarized\n\n## Changes\n- Topic Journals with Markdown editing and reading, last-edited timestamps, and economical-model titles generated on save. Discussions can read and update journal entries; recent topic journals are included automatically.\n- Chrome Capture 0.4.1 retains one-click Automatic and adds explicit Print to PDF, visible Screenshot, selected text, and Custom capture with a title, pasted text, and attached files. Per-website defaults are optional.\n- Desktop native bridge supports screenshots and custom captures, preserving original bytes and attachments in portable library exports.\n- Print to PDF recovers from Chrome's foreign-extension access restriction with a cleaned copy of loaded content. The original page is unchanged.\n- Browser-session Google Docs/Slides/Sheets PDF exports and focused loaded-page captures for Slack, Google Chat and GitHub. Unloaded or virtualized content is not claimed.\n- Dedicated work-source URL handling and optional custom-provider URL capture, provider conversation policies, and updated integration examples. Plugin-managed sidecar processes are not included yet.\n- Discussion tools can correct estimated artifact dates. Current-year source date handling and compact topic controls are refined.\n\n## Install and compatibility\nDownload Atlas-0.4.0-mac-arm64.zip, quit the existing app after active work finishes, and replace Atlas.app at its existing location. The external library, settings, credentials and installed plugins stay in place. Open Atlas once to register its Chrome native bridge. No personal library or credentials are included in this release.\n\nFor Chrome, extract atlas-chrome-capture-0.4.1.zip and select its folder using chrome://extensions \u2192 Load unpacked. New contextMenus/storage permissions support alternate modes and website defaults. Screenshot and Custom capture require this updated desktop bridge; updating the extension alone is insufficient. The stable extension identity and native protocol v2 are unchanged.\n\nThis app is not Developer ID signed or notarized. macOS may require System Settings \u2192 Privacy & Security \u2192 Open Anyway after verifying the download. Managed devices may prevent launch. Windows/Intel Mac builds and Chrome Web Store auto-updates are not included.\n\nLibrary schema remains 1. Use one writing computer per synced library at a time. The updater checks compatible stable releases outside developer mode and verifies downloads; installation remains manual for this unsigned build.\n\n## Verification\nApplication and architectural tests, extension regression tests, provider-kit contract tests, isolated packaged native capture and backend checks, and the public archive privacy audit are release gates. Native capture tests exercise PDF, screenshot, custom text/attachments and read-only enforcement using fixture data. Live authenticated publisher pages, paid providers and cloud synchronization are not claimed as automated validations.\n\nSHA256SUMS and atlas-update.json identify the exact application archive. The same files are mirrored to the local iCloud Releases folder. Development source remains private; Electron application code is inspectable inside the packaged binary.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.4.0-mac-arm64.zip",
+        "size": 183581665,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.4.0/Atlas-0.4.0-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.4.0/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.4.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.5.1",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.5.1",
+    "body": "# Chrome Capture 0.5.1 \u2014 Visible saving progress\n\n- Displays elapsed time while Atlas retrieves large documents and source metadata.\n- Adds a best-effort leave-page warning while native retrieval is in progress; Chrome may still allow closure.\n- Removes progress UI before PDF/screenshot fallback and when the request completes or fails.\n- Tab closure does not itself cancel backend retrieval.\n\nReleased alongside Atlas 0.5.2, which adds URL refetch, document attribution and labeled creation dates. Reloading an older unpacked folder does not update its files: extract this ZIP and Load unpacked from atlas-chrome-capture-0.5.1. Open Atlas once to register its native connection. Extension identity is unchanged.\n\n38 extension tests passed. No live private Google source validation. Verify the included SHA-256 checksum.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.5.1.zip",
+        "size": 54844,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.1/atlas-chrome-capture-0.5.1.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.1.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.1/atlas-chrome-capture-0.5.1.zip.sha256"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.5.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.5.0",
+    "body": "# Chrome Capture 0.5.0\n\n- Gmail conversation PDF capture: loaded bodies, sender/recipient headers and displayed dates; no inbox sidebar or compose drafts. Missing messages and attachment omissions are labeled.\n- Scrolling screenshot capture with nested-pane selection, overlap removal, memory/height bounds and scroll restoration.\n- Google Docs/Sheets/Slides consult an installed source plugin before browser PDF export; unavailable export falls back to a labeled screenshot.\n- Check for updates and reload from the extension menu. Unpacked extensions still need manual file replacement/download.\n\nInstall Atlas 0.5.0 and open it once, then extract atlas-chrome-capture-0.5.0.zip and select that folder in chrome://extensions \u2192 Load unpacked. Existing extension identity and native protocol v2 remain unchanged. No localhost server or extra browser permissions are required.\n\nGmail/scrolling captures include only available rendered content; expand messages first. Hidden sheets/slides, virtualized history and attachment file bytes may be absent. Browser selectors were verified with synthetic Chromium fixtures, not a live mailbox.\n\nSHA-256: `f04161975486937e8c7fba9c262c0033e1f055516ad85990df8679911e6634df`\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.5.0.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.0/atlas-chrome-capture-0.5.0.sha256"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.0.zip",
+        "size": 53407,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.0/atlas-chrome-capture-0.5.0.zip"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.4.1",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.4.1",
+    "body": "# Chrome Capture 0.4.1\n\nOne-click Automatic plus right-click Print to PDF, visible Screenshot, selected-text and Custom capture. Add a custom title, pasted text, screenshots or files; choose optional per-website defaults.\n\nIncludes Google Docs/Slides/Sheets PDF exports and focused loaded-page capture for Slack, Google Chat and GitHub. Print to PDF now handles Chrome foreign-extension conflicts through a cleaned copy, with cleanup on failure.\n\nRequires Atlas 0.4.0 for Screenshot and Custom capture. Open Atlas once to register the native bridge. Extract the ZIP, then use chrome://extensions \u2192 Load unpacked. The stable extension identity is unchanged from 0.3.0; new contextMenus/storage permissions are required. This is an unpacked extension, not a Chrome Web Store release. macOS desktop native bridge only.\n\n23 extension tests pass. Packaged Atlas native bridge tests cover PDF, screenshots, custom captures and read-only rejection. Live authenticated pages may vary; unloaded/virtualized content is not captured.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.4.1.zip",
+        "size": 44815,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.4.1/atlas-chrome-capture-0.4.1.zip"
+      },
+      {
+        "name": "CHROME-SHA256SUMS",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.4.1/CHROME-SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "v0.3.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.3.0",
+    "body": "# Atlas 0.3.0 \u2014 Portable desktop workspace\n\nmacOS Apple Silicon \u00b7 Unsigned and not notarized\n\n## What's new\n- Independent graph windows and a compact graph dock, with separate artifact stores, layouts and discussion history per graph.\n- Export selected graphs as one library archive; import into another installation or update matching graphs by UUID with a recoverable backup.\n- iPhone sharing through a one-time Shortcut and a managed-folder Inbox. Atlas collects periodically and on opening Inbox, stages new artifacts until **Keep**, tracks unread items and supports manual discard.\n- Recent work, Discussions and Inbox queues. Discussion agents can propose Understanding revisions; several threads contribute to one approved history, with explicit review and approval.\n- HTML visuals in discussions and Understanding, isolated from application scripts and network access.\n- Settings \u2192 App \u2192 App updates: launch checks outside developer mode, release notes, cancellable downloads and SHA256 verification. This unsigned build requires manual app replacement after downloading; it does not install itself or modify library data.\n- Developer mode supports local source Refresh and separate normal windows. Native changes still need a build. Saved offscreen cameras recover a visible map without changing tile placement, rotation or Undo history.\n- Integration developer kit now covers both model-provider plugins and URL-envelope Inbox producers, including local folders managed by iCloud or Google Drive.\n- Optional Chrome capture 0.3.0 uses the desktop native bridge and can wake Atlas. Dedicated API imports and original PDF capture are preserved.\n\n## Download and update\nDownload `Atlas-0.3.0-mac-arm64.zip`, unzip, quit the old Atlas app after active work finishes, and replace it at the same location. Reopen that app. Your external library folder, installation settings, credentials and provider plugins remain in place. Keep a library backup before moving between installations. This release contains no personal library or credentials.\n\nThis release is not Developer ID signed or notarized. macOS may block first launch; use System Settings \u2192 Privacy & Security \u2192 Open Anyway if offered after verifying the source. Managed devices may prevent launch. Do not disable Gatekeeper globally. See the download README for prerequisites and setup.\n\nThe optional `atlas-chrome-capture-0.3.0.zip` is independently versioned. Extract it and use Chrome's Load unpacked. Remove the old Save to Atlas entry first because this version uses a new stable extension identity. Open Atlas once to register the native bridge. Chrome Web Store installation and automatic extension updates are not included.\n\n## Compatibility and verification\n- macOS Apple Silicon only; Windows, Intel Mac and iOS app builds are not included.\n- Folder-library schema remains 1. Credentials are local to each installation. Use one writing computer per synced library at a time.\n- Inbox v1 accepts URL envelopes, not raw local PDF/audio files. Desktop Atlas must be running and the destination graph opened in that session to collect.\n- First release with `atlas-update.json`. Earlier apps without the updater require this download manually. Future compatible stable releases can be detected by 0.3.0.\n- Offline application/contract tests, exported-kit tests, isolated Electron UI/refresh/window/capture checks, packaged backend smoke and archive privacy audit are release gates. Live paid providers, phone/cloud synchronization and clean-machine Gatekeeper behavior are not automated validations.\n\n`SHA256SUMS` verifies the app ZIP. `atlas-update.json` supplies the same digest, exact byte size, version, architecture and minimum OS for the updater. Source development remains private; these public downloads contain packaged application code and readable integration examples.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.3.0-mac-arm64.zip",
+        "size": 183566181,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/Atlas-0.3.0-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.3.0.zip",
+        "size": 35292,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/atlas-chrome-capture-0.3.0.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/atlas-update.json"
+      },
+      {
+        "name": "CHROME-SHA256SUMS",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/CHROME-SHA256SUMS"
+      },
+      {
+        "name": "README.md",
+        "size": 4214,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/README.md"
+      },
+      {
+        "name": "RELEASE.md",
+        "size": 3859,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/RELEASE.md"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.3.0/SHA256SUMS"
+      }
+    ]
+  }
+]

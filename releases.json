@@ -1,5 +1,29 @@
 [
   {
+    "tag_name": "v0.6.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.6.0",
+    "body": "# Atlas 0.6.0 — Responsive capture, Inbox review and supplemental sources\n\nmacOS Apple Silicon · Unsigned and not notarized\n\n- Graph loading and local artifact storage no longer wait for model discovery or plugin bridge startup. Bridges prepare only when their provider is used.\n- Chrome capture acknowledges committed source data without waiting for the artifact window. Summaries and topic suggestions continue in the background.\n- Inbox drains incoming links with three workers, preserves same-URL deduplication, and allows review while other captures run. Selected cards stay highlighted; active summary, date and topic work shows a spinner.\n- Summary generation preserves known dates. Explicit post creation metadata and footer date evidence are promoted ahead of long content; date estimation can run alongside summaries.\n- Topic requests queue instead of failing when background jobs are busy. Successful retries replace stale cached errors.\n- Add multiple supplemental PDFs, images or other files to one artifact using the file picker/drop zone. PDFs/images appear below the original preview. Combined summaries include readable original and supplemental content; old in-flight summaries cannot overwrite newer evidence. Refetch preserves manual supplements.\n- Graph renames update catalog labels and default icons while retaining stable graph IDs. Clicking another node opens its details; dragging leaves the discussion panel unchanged.\n- Local installation now preserves relative framework links. Installed apps remain independent of temporary build folders.\n\nChrome Capture 0.5.2 is released separately with bounded progress-overlay waits and a GitHub rate-limit fallback for update checks. Source download/private integration latency still depends on the source; no live private-provider speed benchmark is claimed.\n\n## Install\nDownload Atlas-0.6.0-mac-arm64.zip and verify SHA256SUMS. Quit Atlas after active work finishes, replace Atlas.app at its existing location and reopen. Library data, settings, credentials and plugins remain separate. This build is unsigned/not notarized; Apple Silicon only. Chrome unpacked installations require loading the new extension folder.\n\n## Validation\nOffline module, route, concurrency and persistence tests; integration developer-kit checks; isolated packaged Electron backend smoke. No personal library data or credentials are included in the release. Live private sites and iPhone delivery remain user-assisted checks.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.6.0-mac-arm64.zip",
+        "size": 183603254,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.6.0/Atlas-0.6.0-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.6.0/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.6.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
     "tag_name": "v0.5.3",
     "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.5.3",
     "body": "# Atlas 0.5.3 — Estimate missing artifact dates\n\nmacOS Apple Silicon · Unsigned and not notarized\n\n- Undated artifacts have an Estimate date icon. The LLM considers saved content, title, summary, metadata, available comments and supported screenshot images.\n- Relative publication labels such as “3 hr ago” are interpreted against the saved capture timestamp (or latest refetch), not the current time. Results remain estimated with supporting evidence; insufficient evidence stays unknown.\n- Date estimation preserves title, summary, source content and topic links. Concurrent manual corrections take precedence. Missing source metadata/comments cannot be invented.\n- Update checks recover from GitHub API rate limits (HTTP 403/429) using a fixed public release feed, without GitHub credentials. Download size, URL and checksum validation remain enforced.\n\nChrome Capture remains at published version 0.5.1; its separate fallback fix is not included in this desktop-only release.\n\n## Install\nDownload Atlas-0.5.3-mac-arm64.zip and verify SHA256SUMS. Quit Atlas after active work finishes, replace Atlas.app at its existing location and reopen it. Library data, settings, credentials and plugins remain separate and unchanged. This build is unsigned/not notarized; macOS or managed-device policy may require additional installation steps. Apple Silicon only.\n\nIf an older updater reports HTTP 403, download this release directly from GitHub. Once installed, 0.5.3 can use the fallback feed.\n\n## Verification\nOffline application tests, provider-kit checks, packaged runtime smoke test, archive privacy audit and GitHub/iCloud asset checksum verification. Model tests use fixtures rather than live private Workplace sources. Local iCloud verification does not prove synchronization completion.\n",
@@ -136,6 +160,25 @@
         "name": "SHA256SUMS",
         "size": 92,
         "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.4.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.5.2",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.5.2",
+    "body": "# Save to Atlas 0.5.2 — Responsive progress and reliable update checks\n\n- Progress overlays cannot indefinitely block capture when a source page is unresponsive.\n- Update discovery falls back to the public release feed on GitHub API 403/429 responses; no GitHub credentials are required.\n- Use with Atlas 0.6.0 for save acknowledgements that do not wait for artifact-window loading or background enrichment.\n\nExtract the ZIP and load atlas-chrome-capture-0.5.2 through Chrome → Extensions → Developer mode → Load unpacked. Keep the extracted directory. Unpacked extensions cannot install downloaded updates automatically. Existing extension identity and capture modes are unchanged.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.5.2.zip",
+        "size": 55437,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.2/atlas-chrome-capture-0.5.2.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.5.2.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.5.2/atlas-chrome-capture-0.5.2.zip.sha256"
       }
     ]
   },

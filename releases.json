@@ -1,5 +1,29 @@
 [
   {
+    "tag_name": "v0.9.2",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.9.2",
+    "body": "# Atlas 0.9.2\n\nStudy conversations now show their highlighted source passage above the messages when opened in the shared artifact discussion panel, including Workspace. The quote is taken directly from the canonical conversation, preserves line breaks, and is escaped safely. Ordinary conversations do not show an empty quote block.\n\nThis fixes presentation only; the agent already received the saved selection as context. Existing conversations, highlights and library data are preserved.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.9.2-mac-arm64.zip",
+        "size": 199946051,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.9.2/Atlas-0.9.2-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.9.2/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.9.2/SHA256SUMS"
+      }
+    ]
+  },
+  {
     "tag_name": "v0.9.1",
     "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.9.1",
     "body": "# Atlas 0.9.1\n\n- Study and artifact discussions now share one canonical conversation store, with safe backup and idempotent import of existing Study conversations. Replies, titles and archive state are shared across views.\n- Workspace opens conversations in its discussion panel instead of unexpectedly opening Study.\n- Study’s back control shows the conversation list; the composer appears only when starting or reading a conversation.\n- Compact Study toolbar icons preserve space and keep reading controls together.\n- The provider developer kit documents Dashboard tile requests, structured visual responses and tool access, with a runnable contract example.\n\nLibrary data and credentials stay separate from the app update.\n",

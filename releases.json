@@ -1,5 +1,48 @@
 [
   {
+    "tag_name": "v0.7.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.7.0",
+    "body": "# Atlas 0.7.0 — Study reader, richer source capture and focused work queues\n\nmacOS Apple Silicon · Unsigned and not notarized\n\n- Open long artifacts in a separate Study window. Organization runs on first use, creates collapsed topic sections, and keeps the saved original available. The reading-detail slider changes both reader grouping and navigation. Transcript speaker turns remain separate, with concise headings in the sidebar.\n- Select source text to ask questions or add notes; insert context or sandboxed HTML visuals without rewriting the original. Export inserted notes as a new artifact. Studies and annotations travel with library exports.\n- Attach, paste or drop images into topic, artifact and Study discussions. Images are bounded, normalized, stored with the thread and passed separately to vision-capable providers.\n- Dismiss Recent work and Discussion cards until new interaction brings them back. Jump directly from a workspace card to its graph topic; artifacts with multiple topic links offer a destination picker. Queues cap recent results and load incrementally.\n- Inbox cards have full-card selection, consistent icons and distinct review actions. Review and dismissal remain usable while discussions load.\n- Root graph controls support graph deletion with confirmation, active-writer protection and isolation from sibling graphs.\n- Capture inline SVG colors, publisher images and supported embedded charts more faithfully. X API photo attachments now appear with the artifact. Refetch retains manual supplements and prior source history.\n- Date estimation can use a documented software version's release date when direct publication evidence is unavailable; estimates retain their basis.\n- Understanding renders HTML inline without an extra automatic “Visual explanation” box. Discussions can propose an exact copy of an existing visualization; approval is still required. Invalid agent formatting gets bounded retries and useful failure stages.\n- Study startup failures now show recovery guidance instead of remaining indefinitely on “Opening Study.”\n\nChrome Capture 0.6.0 is released alongside Atlas with improved image sizing, SVG styling and static capture of supported interactive figures.\n\n## Install\nDownload Atlas-0.7.0-mac-arm64.zip and verify SHA256SUMS. Quit Atlas after active work finishes, replace Atlas.app at its existing location and reopen. Library data, settings, credentials and plugins remain separate. The build is unsigned/not notarized and supports Apple Silicon only. Reload Chrome's unpacked extension from the new versioned folder.\n\n## Verification and limits\n496 offline module, routing, persistence, concurrency and source-integrity tests; 4 integration developer-kit checks; 40 Chrome capture tests; isolated Study, Understanding typography and capture-layout checks; packaged backend smoke and distribution audits. No personal library or credentials are included. Live model output and private-site behavior vary by provider/source. Study preserves extracted text rather than original PDF layout, and existing section cleanup improves only after explicit Organize. Interactive source captures are static snapshots, not live applications. The in-app updater verifies downloads; unsigned app replacement remains manual.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "Atlas-0.7.0-mac-arm64.zip",
+        "size": 186870044,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.7.0/Atlas-0.7.0-mac-arm64.zip"
+      },
+      {
+        "name": "atlas-update.json",
+        "size": 324,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.7.0/atlas-update.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 92,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.7.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.6.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.6.0",
+    "body": "# Save to Atlas 0.6.0 — More faithful article figures\n\n- Preserve computed SVG fills, strokes and text so technical diagrams retain their colors.\n- Include article hero images outside the main text container and preserve displayed image proportions.\n- Snapshot supported interactive figures with their current visible values and styles; retain a static readable representation in the saved PDF.\n- Continue the existing one-click capture and optional print, screenshot, scrolling screenshot and custom modes.\n\nUse with Atlas 0.7.0 for the latest source preview and X API image support. Extension identity and desktop pairing are unchanged. Extract the ZIP, select the versioned folder in Chrome → Extensions → Load unpacked (or update the existing folder and reload). GitHub unpacked extensions do not silently install themselves. Only loaded source content can be captured; private or virtualized pages may still need an alternate capture mode.\n\nValidated with offline capture tests and an isolated Chromium capture-layout fixture. No new extension permissions.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.6.0.zip",
+        "size": 57929,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.0/atlas-chrome-capture-0.6.0.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.6.0.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.0/atlas-chrome-capture-0.6.0.zip.sha256"
+      }
+    ]
+  },
+  {
     "tag_name": "v0.6.0",
     "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.6.0",
     "body": "# Atlas 0.6.0 — Responsive capture, Inbox review and supplemental sources\n\nmacOS Apple Silicon · Unsigned and not notarized\n\n- Graph loading and local artifact storage no longer wait for model discovery or plugin bridge startup. Bridges prepare only when their provider is used.\n- Chrome capture acknowledges committed source data without waiting for the artifact window. Summaries and topic suggestions continue in the background.\n- Inbox drains incoming links with three workers, preserves same-URL deduplication, and allows review while other captures run. Selected cards stay highlighted; active summary, date and topic work shows a spinner.\n- Summary generation preserves known dates. Explicit post creation metadata and footer date evidence are promoted ahead of long content; date estimation can run alongside summaries.\n- Topic requests queue instead of failing when background jobs are busy. Successful retries replace stale cached errors.\n- Add multiple supplemental PDFs, images or other files to one artifact using the file picker/drop zone. PDFs/images appear below the original preview. Combined summaries include readable original and supplemental content; old in-flight summaries cannot overwrite newer evidence. Refetch preserves manual supplements.\n- Graph renames update catalog labels and default icons while retaining stable graph IDs. Clicking another node opens its details; dragging leaves the discussion panel unchanged.\n- Local installation now preserves relative framework links. Installed apps remain independent of temporary build folders.\n\nChrome Capture 0.5.2 is released separately with bounded progress-overlay waits and a GitHub rate-limit fallback for update checks. Source download/private integration latency still depends on the source; no live private-provider speed benchmark is claimed.\n\n## Install\nDownload Atlas-0.6.0-mac-arm64.zip and verify SHA256SUMS. Quit Atlas after active work finishes, replace Atlas.app at its existing location and reopen. Library data, settings, credentials and plugins remain separate. This build is unsigned/not notarized; Apple Silicon only. Chrome unpacked installations require loading the new extension folder.\n\n## Validation\nOffline module, route, concurrency and persistence tests; integration developer-kit checks; isolated packaged Electron backend smoke. No personal library data or credentials are included in the release. Live private sites and iPhone delivery remain user-assisted checks.\n",

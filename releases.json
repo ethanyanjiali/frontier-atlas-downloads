@@ -1,5 +1,24 @@
 [
   {
+    "tag_name": "chrome-v0.6.2",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.6.2",
+    "body": "# Save to Atlas 0.6.2\n\nFixes scrolling screenshot capture failing with “Value is unserializable.” This also fixes the same failure when scrolling capture is used as the Google export fallback.\n\n- All 44 extension tests pass, including JSON-safe script arguments across capture paths.\n- Chromium fixture verifies stitched image pixels, dimensions and original scroll-position restoration.\n- No new permissions or Atlas desktop update required.\n\nDownload and unzip `atlas-chrome-capture-0.6.2.zip`, then load its folder using **Load unpacked** at `chrome://extensions`. If Chrome still points to an older versioned folder, select this new folder; reloading the old folder will not update it. The extension identity is unchanged.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.6.2.zip",
+        "size": 58281,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.6.2.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip.sha256"
+      }
+    ]
+  },
+  {
     "tag_name": "v0.9.2",
     "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.9.2",
     "body": "# Atlas 0.9.2\n\nStudy conversations now show their highlighted source passage above the messages when opened in the shared artifact discussion panel, including Workspace. The quote is taken directly from the canonical conversation, preserves line breaks, and is escaped safely. Ordinary conversations do not show an empty quote block.\n\nThis fixes presentation only; the agent already received the saved selection as context. Existing conversations, highlights and library data are preserved.\n",

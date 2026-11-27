@@ -1,20 +1,30 @@
 [
   {
-    "tag_name": "chrome-v0.6.2",
-    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.6.2",
-    "body": "# Save to Atlas 0.6.2\n\nFixes scrolling screenshot capture failing with “Value is unserializable.” This also fixes the same failure when scrolling capture is used as the Google export fallback.\n\n- All 44 extension tests pass, including JSON-safe script arguments across capture paths.\n- Chromium fixture verifies stitched image pixels, dimensions and original scroll-position restoration.\n- No new permissions or Atlas desktop update required.\n\nDownload and unzip `atlas-chrome-capture-0.6.2.zip`, then load its folder using **Load unpacked** at `chrome://extensions`. If Chrome still points to an older versioned folder, select this new folder; reloading the old folder will not update it. The extension identity is unchanged.\n",
+    "tag_name": "v0.10.0",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/v0.10.0",
+    "body": "# Atlas 0.10.0 — Reviewed imports and same-window Dashboard\n\nAtlas 0.10.0 brings the recent desktop work together with a module/interface review and regression fixes before the next feature cycle.\n\n## Changes\n\n- Photos / audio intake stages original sources for extraction, glossary-guided cleanup and combined-document review. Nothing enters the artifact store until approval; failed saves retain drafts. Image originals are used for extraction while compact PDFs preserve the reviewed pages.\n- Artifact discussions can inspect a saved page's explicit contents list and, when requested, collect linked pages into a reading PDF. Original capture bytes and prior reading copies remain available. Static extraction reports unsupported or abbreviated content honestly.\n- Dashboard opens inside the main window. Back or Esc returns to the previous view and draft; open tile dialogs dismiss first. The native title identifies Dashboard and its graph.\n- Dashboard freshness is checked on entry/return, preserves Daily/Weekly settings, and reuses saved fetch plans. Unchanged public evidence skips model work. There is no background schedule while Dashboard is closed.\n- Library exports now preserve Dashboard conversations, visual history, fetch plans and freshness metadata, as well as import drafts and glossary.\n- Import shutdown waits for in-progress artifact approval. Read APIs isolate glossary state from callers. Installers share one verified bundle-copy implementation.\n- Topic timelines include active descendants without duplicate artifacts, summary regeneration remains available, and dismissed Workspace activity stays dismissed until new activity.\n\n## Engineering verification\n\n604 offline tests and 5 provider-kit contract tests passed. Isolated Dashboard and Import & Review fixtures verified same-window return, draft preservation, freshness checks, combined PDF preview stability and explicit artifact approval. Module boundaries, provider documentation and release checks were updated. Packaged startup and archive audit are required before publication.\n\n## Compatibility and limits\n\nExisting libraries remain in place; no destructive migration is required. Older library archives remain readable. New archives containing Dashboard UUID records require Atlas 0.10.0 or later on the receiving installation.\n\nThis is the macOS Apple Silicon desktop release. It does not change the iOS/TestFlight or Chrome extension version. The Mac build is not Developer ID signed or notarized; verify SHA256SUMS and follow the download page's installation instructions.\n\nPhoto extraction uses the selected generation provider. Optional audio transcription requires a separately configured, separately billed credential. Linked-page collection is bounded to 40 selected same-origin contents links and does not execute publisher JavaScript or download every cited source. Actual OCR/model quality, authenticated source access and cloud synchronization remain outside offline test guarantees. Use one writing computer at a time.\n",
     "draft": false,
     "prerelease": false,
     "assets": [
       {
-        "name": "atlas-chrome-capture-0.6.2.zip",
-        "size": 58281,
-        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip"
+        "name": "Atlas-0.10.0-mac-arm64.zip",
+        "size": 199975422,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.10.0/Atlas-0.10.0-mac-arm64.zip"
       },
       {
-        "name": "atlas-chrome-capture-0.6.2.zip.sha256",
-        "size": 97,
-        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip.sha256"
+        "name": "atlas-update.json",
+        "size": 326,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.10.0/atlas-update.json"
+      },
+      {
+        "name": "RELEASE.md",
+        "size": 3025,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.10.0/RELEASE.md"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 93,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.10.0/SHA256SUMS"
       }
     ]
   },
@@ -111,6 +121,25 @@
         "name": "SHA256SUMS",
         "size": 92,
         "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/v0.8.0/SHA256SUMS"
+      }
+    ]
+  },
+  {
+    "tag_name": "chrome-v0.6.2",
+    "html_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/tag/chrome-v0.6.2",
+    "body": "# Save to Atlas 0.6.2\n\nFixes scrolling screenshot capture failing with “Value is unserializable.” This also fixes the same failure when scrolling capture is used as the Google export fallback.\n\n- All 44 extension tests pass, including JSON-safe script arguments across capture paths.\n- Chromium fixture verifies stitched image pixels, dimensions and original scroll-position restoration.\n- No new permissions or Atlas desktop update required.\n\nDownload and unzip `atlas-chrome-capture-0.6.2.zip`, then load its folder using **Load unpacked** at `chrome://extensions`. If Chrome still points to an older versioned folder, select this new folder; reloading the old folder will not update it. The extension identity is unchanged.\n",
+    "draft": false,
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "atlas-chrome-capture-0.6.2.zip",
+        "size": 58281,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip"
+      },
+      {
+        "name": "atlas-chrome-capture-0.6.2.zip.sha256",
+        "size": 97,
+        "browser_download_url": "https://github.com/ethanyanjiali/frontier-atlas-downloads/releases/download/chrome-v0.6.2/atlas-chrome-capture-0.6.2.zip.sha256"
       }
     ]
   },
